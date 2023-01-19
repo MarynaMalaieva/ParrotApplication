@@ -1,5 +1,6 @@
 package com.example.parrotapplication.ui.theme.parrot
 
+import android.graphics.Paint.Style
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -28,7 +29,8 @@ import com.example.parrotapplication.ui.theme.ParrotApplicationTheme
 fun ParrotCard(
     parrot: Parrot,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+//    style: Style
 ) {
     val padding = 10.dp
     Column(
@@ -42,7 +44,7 @@ fun ParrotCard(
 //            )
             .fillMaxWidth()
             .background(
-                color = Color(red = 135, green = 148, blue = 228, alpha = 226),
+                color = Color(red = 194, green = 194, blue = 194, alpha = 65),
                 shape = RoundedCornerShape(10.dp)
             )
             .border(
