@@ -50,7 +50,10 @@ fun ParrotCard(
             .border(
                 border = ButtonDefaults.outlinedButtonBorder,
                 shape = RoundedCornerShape(10.dp)
-            )
+            ),
+
+
+
 
     ) {
         Row(

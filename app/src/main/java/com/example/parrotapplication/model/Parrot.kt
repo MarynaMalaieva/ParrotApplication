@@ -7,5 +7,4 @@ data class Parrot(
     val avatar: Int,
     val breed: String,
     val sex: String
-
 )
