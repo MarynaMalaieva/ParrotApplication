@@ -20,11 +20,7 @@ import com.example.parrotapplication.ui.feed.Feed
 import com.example.parrotapplication.ui.profile.ParrotProfile
 
 class MainActivity : ComponentActivity() {
-    private fun showDialer() {
-        val intent = Intent(Intent.ACTION_DIAL)
-        intent.data = Uri.parse("tel:32466656545")
-        startActivity(intent)
-    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,29 +32,38 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-//                    MainScreen(ViewModel, this.showDialer())
-                    MainScreen(ViewModel)
+                    MainScreen(ViewModel
+//                        ::showDialer
+                    )
                 }
             }
         }
     }
 
+//    private fun showDialer() {
+//        val intent = Intent(Intent.ACTION_DIAL)
+//        intent.data = Uri.parse("tel:32466656545")
+//        startActivity(intent)
+//    }
 }
 
 @Composable
-fun MainScreen(viewModel: ParrotsViewModel){
+fun MainScreen(viewModel: ParrotsViewModel
+//               , showDial: () -> Unit
+){
     val state by viewModel.parrots.collectAsState()
     var selectedId by remember {
         mutableStateOf<String?>(value = null)
     }
-//    Feed(parrots = state, onSelected = {})
     Crossfade(targetState = selectedId) { id ->
         if (id == null) {
             Feed(parrots = state, onSelected = { parrot ->
                 selectedId = parrot.id
             })
     } else {
-        ParrotProfile(parrot = viewModel.getById(id))
+        ParrotProfile(parrot = viewModel.getById(id),
+//            showDial = showDial
+        )
             BackHandler() {
                 selectedId = null
             }
@@ -69,6 +74,7 @@ fun MainScreen(viewModel: ParrotsViewModel){
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
+    fun empty() {}
     ParrotApplicationTheme {
         MainScreen(ParrotsViewModel())
     }

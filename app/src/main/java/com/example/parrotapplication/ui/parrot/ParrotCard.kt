@@ -39,7 +39,7 @@ fun ParrotCard(
                 top = padding,
                 start = padding / 2,
                 end = padding /2,
-                bottom = padding / 2
+                bottom = padding / 5
             )
             .fillMaxWidth()
             .background(
