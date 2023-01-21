@@ -6,7 +6,6 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -31,6 +30,7 @@ fun ParrotCard(
     modifier: Modifier = Modifier,
 ) {
     val padding = 10.dp
+    val color = Color(red = 241, green = 239, blue = 239, alpha = 255)
     Column(
         modifier
             .clickable(onClick = onClick)
@@ -38,15 +38,16 @@ fun ParrotCard(
                 top = padding,
                 start = padding / 2,
                 end = padding / 2,
-                bottom = padding / 5
+                bottom = padding / 10
             )
             .fillMaxWidth()
             .background(
-                color = Color(red = 194, green = 194, blue = 194, alpha = 65),
+                color,
                 shape = RoundedCornerShape(10.dp)
             )
             .border(
-                border = ButtonDefaults.outlinedButtonBorder,
+                width = 1.dp,
+                color,
                 shape = RoundedCornerShape(10.dp)
             ),
     ) {
@@ -54,16 +55,16 @@ fun ParrotCard(
             verticalAlignment = Alignment.CenterVertically,
             modifier = modifier
                 .fillMaxWidth(10f)
-                .height(80.dp)
+                .height(100.dp)
         ) {
             Image(
                 painter = painterResource(id = parrot.avatar),
                 contentDescription = "Avatar",
                 modifier
-                    .size(70.dp)
+                    .size(90.dp)
                     .padding(
                         top = 2.dp,
-                        start = 5.dp,
+                        start = 6.dp,
                         end = 0.dp,
                         bottom = 2.dp
                     )
@@ -74,13 +75,13 @@ fun ParrotCard(
             Column {
                 Text(
                     text = parrot.name,
-                    style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium)
+                    style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Medium)
                 )
                 Text(
                     text = parrot.breed,
-                    style = MaterialTheme.typography.bodySmall.copy(
+                    style = MaterialTheme.typography.bodyMedium.copy(
                         fontWeight = FontWeight.Light,
-                        color = Color(red = 61, green = 61, blue = 61, alpha = 255)
+                        color = Color.DarkGray
                     ),
                 )
             }
