@@ -24,11 +24,11 @@ fun DialButton() {
     ) {
         Button(
             onClick = {
-                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:328695741"))
+                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:+38(099)1234567"))
                 context.startActivity(intent)
             }
         ) {
-            Text(text = "Contact for buy")
+            Text(text = "Contact for adoption")
         }
     }
 }
