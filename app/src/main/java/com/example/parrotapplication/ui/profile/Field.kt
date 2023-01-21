@@ -29,7 +29,6 @@ fun Field(
                     end = padding,
                     bottom = padding / 2
                 )
-
         ) {
             Text(
                 text = fieldName,
@@ -50,11 +49,9 @@ fun Field(
                         bottom = 3.dp
                     )
             )
-
         }
     }
 }
-
 
 @Preview
 @Composable

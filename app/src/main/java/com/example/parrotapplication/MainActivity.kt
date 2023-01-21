@@ -1,7 +1,5 @@
 package com.example.parrotapplication
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
@@ -24,33 +22,22 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val ViewModel: ParrotsViewModel by viewModels()
+        val viewModel: ParrotsViewModel by viewModels()
         setContent {
             ParrotApplicationTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainScreen(ViewModel
-//                        ::showDialer
-                    )
+                    MainScreen(viewModel)
                 }
             }
         }
     }
-
-//    private fun showDialer() {
-//        val intent = Intent(Intent.ACTION_DIAL)
-//        intent.data = Uri.parse("tel:32466656545")
-//        startActivity(intent)
-//    }
 }
 
 @Composable
-fun MainScreen(viewModel: ParrotsViewModel
-//               , showDial: () -> Unit
-){
+fun MainScreen(viewModel: ParrotsViewModel) {
     val state by viewModel.parrots.collectAsState()
     var selectedId by remember {
         mutableStateOf<String?>(value = null)
@@ -60,21 +47,20 @@ fun MainScreen(viewModel: ParrotsViewModel
             Feed(parrots = state, onSelected = { parrot ->
                 selectedId = parrot.id
             })
-    } else {
-        ParrotProfile(parrot = viewModel.getById(id),
-//            showDial = showDial
-        )
+        } else {
+            ParrotProfile(
+                parrot = viewModel.getById(id),
+            )
             BackHandler() {
                 selectedId = null
             }
-    }
+        }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    fun empty() {}
     ParrotApplicationTheme {
         MainScreen(ParrotsViewModel())
     }

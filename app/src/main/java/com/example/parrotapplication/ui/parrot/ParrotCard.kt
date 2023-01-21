@@ -29,7 +29,6 @@ fun ParrotCard(
     parrot: Parrot,
     onClick: () -> Unit,
     modifier: Modifier = Modifier,
-//    style: Style
 ) {
     val padding = 10.dp
     Column(
@@ -38,7 +37,7 @@ fun ParrotCard(
             .padding(
                 top = padding,
                 start = padding / 2,
-                end = padding /2,
+                end = padding / 2,
                 bottom = padding / 5
             )
             .fillMaxWidth()
@@ -50,17 +49,12 @@ fun ParrotCard(
                 border = ButtonDefaults.outlinedButtonBorder,
                 shape = RoundedCornerShape(10.dp)
             ),
-
-
-
-
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = modifier
                 .fillMaxWidth(10f)
                 .height(80.dp)
-
         ) {
             Image(
                 painter = painterResource(id = parrot.avatar),
@@ -88,17 +82,15 @@ fun ParrotCard(
                         fontWeight = FontWeight.Light,
                         color = Color(red = 61, green = 61, blue = 61, alpha = 255)
                     ),
-
-                    )
+                )
             }
-
         }
     }
 }
 
 @Preview
 @Composable
-fun ParrotCardPreview(){
+fun ParrotCardPreview() {
     val parrot = Parrot(
         id = "1",
         name = "Ozzy",
@@ -106,12 +98,11 @@ fun ParrotCardPreview(){
         sex = "male",
         breed = "Scarlet Macaw",
         avatar = R.drawable.scarletmacaw_1
-            )
+    )
 
     ParrotApplicationTheme {
         Surface {
             ParrotCard(parrot, {})
-
         }
     }
 }

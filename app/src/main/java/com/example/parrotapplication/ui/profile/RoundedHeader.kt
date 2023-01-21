@@ -21,33 +21,17 @@ fun RoundedHeader(avatar: Int) {
         modifier = Modifier
             .fillMaxWidth()
             .height(400.dp),
-        tonalElevation = 0.dp,
         shape = RoundedCornerShape(
-            topStartPercent = 0,
-            topEndPercent = 0,
             bottomEndPercent = 13,
             bottomStartPercent = 13
         )
-
-    )
-    {
-//        val paddingValues = 16.dp
+    ) {
         Image(
-            painter = painterResource(id = avatar),
+            alignment = Alignment.TopCenter,
             contentDescription = "Avatar",
-//            modifier = Modifier
-//                .size(50.dp)
-//                .padding(
-//                    top = 2.dp,
-//                    start = 5.dp,
-//                    end = 0.dp,
-//                    bottom = 2.dp
-//                )
-//                .clip(RoundedCornerShape(10.dp)),
             contentScale = ContentScale.Crop,
-            alignment = Alignment.TopCenter
+            painter = painterResource(id = avatar),
         )
-
     }
 }
 
@@ -56,6 +40,5 @@ fun RoundedHeader(avatar: Int) {
 fun RoundedHeaderPreview() {
     ParrotApplicationTheme() {
         RoundedHeader(avatar = R.drawable.budgerigar_1)
-
     }
 }

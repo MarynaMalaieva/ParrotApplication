@@ -2,7 +2,6 @@ package com.example.parrotapplication.ui.feed
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,14 +19,12 @@ fun Feed(
     modifier: Modifier = Modifier
 ) {
     Surface(modifier = modifier.fillMaxSize()) {
-        val listState = rememberLazyListState()
         LazyColumn() {
             item { FeedHeader() }
             items(parrots) { parrot ->
                 ParrotCard(parrot = parrot, onClick = { onSelected(parrot) })
             }
         }
-
     }
 }
 
@@ -43,7 +40,6 @@ fun FeedPreview() {
         avatar = R.drawable.scarletmacaw_1
     )
     ParrotApplicationTheme() {
-        Feed(parrots = listOf(parrot), onSelected ={} )
-
+        Feed(parrots = listOf(parrot), onSelected = {})
     }
 }

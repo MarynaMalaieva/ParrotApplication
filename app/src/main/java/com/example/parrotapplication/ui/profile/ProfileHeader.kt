@@ -15,34 +15,20 @@ import com.example.parrotapplication.ui.theme.ParrotApplicationTheme
 
 @Composable
 fun ProfileHeader() {
- Surface(
-     color = MaterialTheme.colorScheme.onSurface,
-     contentColor = MaterialTheme.colorScheme.surface
- ) {
-
-     Column {
-//         RoundedHeader(title = "Our pets")
-         Spacer(modifier = Modifier
-             .size(24.dp)
-         )
-         Text(
-             text = "Parrot store",
-             style = MaterialTheme.typography.displaySmall,
-             modifier = Modifier
-                 .padding(start = 16.dp)
-                 )
-
-
-//         Text(
-//             text ="Our pets",
-//             style = MaterialTheme.typography.bodySmall,
-//             modifier = Modifier.padding(start = 16.dp)
-//         )
-         Spacer(modifier = Modifier.size(16.dp))
-
-     }
-     
- }
+    Surface(
+        color = MaterialTheme.colorScheme.onSurface,
+        contentColor = MaterialTheme.colorScheme.surface
+    ) {
+        Column {
+            Spacer(modifier = Modifier.size(24.dp))
+            Text(
+                text = "Parrot store",
+                style = MaterialTheme.typography.displaySmall,
+                modifier = Modifier.padding(start = 16.dp)
+            )
+            Spacer(modifier = Modifier.size(16.dp))
+        }
+    }
 }
 
 @Preview

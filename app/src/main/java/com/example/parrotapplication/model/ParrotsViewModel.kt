@@ -34,7 +34,7 @@ class ParrotsViewModel: ViewModel() {
                     name = "Abby",
                     age = 6,
                     sex = "female",
-                    breed = "Coctiel",
+                    breed = "Cockatiel",
                     avatar = R.drawable.cockatiel
                 ),
                 Parrot(

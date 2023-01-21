@@ -26,16 +26,17 @@ fun RoundedHeader(title: String) {
             bottomEndPercent = 0,
             bottomStartPercent = 0
         )
-
-    )
-    {
+    ) {
         val paddingValues = 16.dp
         Text(
             text = title,
-            modifier = Modifier.padding(start = paddingValues, top = paddingValues, end = paddingValues),
+            modifier = Modifier.padding(
+                start = paddingValues,
+                top = paddingValues,
+                end = paddingValues
+            ),
             style = MaterialTheme.typography.headlineMedium
         )
-
     }
 }
 
@@ -44,6 +45,5 @@ fun RoundedHeader(title: String) {
 fun RoundedHeaderPreview() {
     ParrotApplicationTheme() {
         RoundedHeader(title = "Header")
-        
     }
 }
