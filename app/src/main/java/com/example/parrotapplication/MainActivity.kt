@@ -16,8 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.parrotapplication.model.ParrotsViewModel
 import com.example.parrotapplication.ui.theme.ParrotApplicationTheme
-import com.example.parrotapplication.ui.theme.feed.Feed
-import com.example.parrotapplication.ui.theme.profile.ParrotProfile
+import com.example.parrotapplication.ui.feed.Feed
+import com.example.parrotapplication.ui.profile.ParrotProfile
 
 class MainActivity : ComponentActivity() {
     private fun showDialer() {

@@ -1,4 +1,4 @@
-package com.example.parrotapplication.ui.theme.profile
+package com.example.parrotapplication.ui.profile
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth

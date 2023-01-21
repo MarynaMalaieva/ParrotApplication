@@ -1,4 +1,4 @@
-//package com.example.parrotapplication.ui.theme.profile
+//package com.example.parrotapplication.ui.profile
 //
 //import android.content.Intent
 //import android.net.Uri

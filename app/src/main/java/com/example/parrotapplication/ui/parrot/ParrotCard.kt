@@ -1,6 +1,5 @@
-package com.example.parrotapplication.ui.theme.parrot
+package com.example.parrotapplication.ui.parrot
 
-import android.graphics.Paint.Style
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

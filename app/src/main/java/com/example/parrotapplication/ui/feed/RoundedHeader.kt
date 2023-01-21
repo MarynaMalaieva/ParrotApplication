@@ -1,6 +1,5 @@
-package com.example.parrotapplication.ui.theme.feed
+package com.example.parrotapplication.ui.feed
 
-import android.icu.text.CaseMap.Title
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
