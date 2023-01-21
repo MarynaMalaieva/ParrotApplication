@@ -36,12 +36,12 @@ fun ParrotCard(
     Column(
         modifier
             .clickable(onClick = onClick)
-//            .padding(
-//                top = padding / 2,
-//                start = padding,
-//                end = padding,
-//                bottom = padding / 2
-//            )
+            .padding(
+                top = padding,
+                start = padding / 2,
+                end = padding /2,
+                bottom = padding / 2
+            )
             .fillMaxWidth()
             .background(
                 color = Color(red = 194, green = 194, blue = 194, alpha = 65),
